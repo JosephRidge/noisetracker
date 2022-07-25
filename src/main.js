@@ -13,7 +13,7 @@ const routes = [
       component:Home, 
     },
     {
-      path:'/tracking',
+      path:'/locations',
       name:'Tracking',
       component:Map, 
     },
