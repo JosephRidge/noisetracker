@@ -6,6 +6,10 @@ module.exports = {
       zIndex:{
         '1000':'1000'
       }, 
+      fontFamily:{
+        'Inter':['sans-serif'], 
+        'Lexend': ['Lexend Deca','sans-serif']
+    },
     }
   },
   plugins: [],
