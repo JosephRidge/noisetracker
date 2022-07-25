@@ -1,5 +1,6 @@
 
-# The Setp
+# The Setup
+[Tailwind Setup](https://tailwindcss.com/docs/installation)
 
 # Vue 3 + Vite
 
