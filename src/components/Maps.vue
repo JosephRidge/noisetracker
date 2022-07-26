@@ -2,7 +2,7 @@
   <div class=" font-Lexend">
     <l-map
       style="height: 100vh; width: 100vw"
-      class="relative overflow-x-hidden"
+      class="map relative overflow-x-hidden"
       :zoom="zoom"
       centerboundsOfKenya
       :minZoom="6.5"
@@ -118,5 +118,8 @@ export default {
   padding: 10px !important;
   margin: 10px !important;
   margin-right: 20px !important;
+}
+#map{
+  background-color: yellow;
 }
 </style>
