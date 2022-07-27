@@ -3,6 +3,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import './style/index.css'
 import Home from './components/HomePage.vue'
 import Map from './components/Maps.vue'
+import Analytics from './components/Analytics.vue' 
 
 import App from './App.vue'
 
@@ -16,6 +17,11 @@ const routes = [
       path:'/locations',
       name:'Tracking',
       component:Map, 
+    },
+    {
+      path:'/stats',
+      name:'Analytics',
+      component:Analytics, 
     },
   ]
 // create the router instance 
