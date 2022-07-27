@@ -5,8 +5,8 @@ import Home from './components/HomePage.vue'
 import Map from './components/Maps.vue'
 import Analytics from './components/Analytics.vue' 
 
-import App from './App.vue'
-
+import App from './App.vue' 
+import HighchartsVue from 'highcharts-vue'
 const routes = [
     {
       path:'/',
@@ -30,4 +30,7 @@ const router = createRouter({
     routes,
   })
  
-createApp(App).use(router).mount('#app')
+createApp(App)
+.use(HighchartsVue)
+.use(router)
+.mount('#app')
