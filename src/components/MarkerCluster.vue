@@ -1,10 +1,13 @@
 <template>
+
+    <TopNavigationVue/>
   <div style="display: none">
     <slot v-if="ready"></slot>
   </div>
 </template>
 
 <script>
+import TopNavigationVue from "./TopNavigation.vue";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import {
@@ -32,12 +35,11 @@ const props = {
 
 export default {
   name: "MarkerCluster",
-
   props,
-
-  // emits: ['ready'],
-
-  setup(props, context) {
+  components:{
+      TopNavigationVue
+  },
+    setup(props, context) {
     const leafletRef = ref({});
     const ready = ref(false);
 

@@ -7,6 +7,7 @@
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <router-link to="/" class="mx-2 lg:mx-10 ">
           <!-- class="animate-spin" -->
+
         <svg
           width="42"
           height="42"
@@ -83,7 +84,6 @@
             </clipPath>
           </defs>
         </svg>
-    
         <span
           class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
         ></span>
@@ -114,7 +114,7 @@
         class="hidden right-0 w-full
          md:block md:w-auto md:mx-32"
         id="navbar-default"
-      >
+      > 
         <ul 
           class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm font-bold"
         >
@@ -198,14 +198,11 @@
 </template>
 
 <script>
-export default {
-  props: ["maps", "home","stats", "userprofile"],
+export default { 
+  props: ["maps", "home","stats", "userprofile"], 
   components: {},
   data() {
-    return {
-      authenticated: false,
-      notificationsBadge: false,
-    };
+    return {};
   },
   methods: {
     showNotifications() {
