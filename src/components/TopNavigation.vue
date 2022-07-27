@@ -144,19 +144,19 @@
           <!-- maps -->
           <li v-if="maps">
             <router-link
-              to="/tracking"
+              to="/locations"
               class="block py-2 pr-4 pl-3 text-primaryPurple
                transition  ease-in-out duration-300 delay-150 
-              text-gray-700 border-b underline underline-offset-4 
+               border-b underline underline-offset-4 
               border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primaryYellow md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >Map</router-link>
           </li>
          <li v-else>
             <router-link
-              to="/tracking"
+              to="/locations"
               class="block py-2 pr-4 pl-3 text-primaryDark 
               hover:text-primaryPurple transition  ease-in-out duration-300 delay-150 
-              text-gray-700 border-b  hover:underline underline-offset-4 border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primaryYellow md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+               border-b  hover:underline underline-offset-4 border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primaryYellow md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >Map</router-link
             >
           </li>
