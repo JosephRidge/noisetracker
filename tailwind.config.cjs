@@ -9,6 +9,7 @@ module.exports = {
         primaryDark:"#2d4356",
         primaryPurple:"#6700ee",
         lightPurple:"#bebcff",
+        primaryGreen:"#obceb2",
         white:"#ffffff",
         transparent: 'transparent',
         current: 'currentColor',
@@ -19,7 +20,8 @@ module.exports = {
         indigo:colors.indigo,
         slate:colors.slate,
         black:colors.black,
-        green:colors.green 
+        green:colors.green,
+        teal:colors.teal
       },
     extend: {
         zIndex:{
