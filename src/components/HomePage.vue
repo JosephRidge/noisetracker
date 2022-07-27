@@ -1,26 +1,24 @@
 <template>
-  <div class=" h-screen home ">
-  <TopNavigationVue :home="true" class="bg-gray-50"/>
-  <div class="mx-20 my-8 px-3 lg:px-8">
-       <!-- Topic -->
-    <div class="text-4xl font-bold
-    text-primaryPurple  my-4">écouté</div>
-    <!-- Solution Description  -->
-    <div class="text-xl font-light text-gray-500
-     max-w-xl text-justify tracking-tighter  ">
-      Enabling optimal urban location planning through tracking and mitigatio of
-      noise pollution prone locations. Using highly intelligent IoT systemms and
-      cloud platforms.
+  <div class="h-screen home">
+    <TopNavigationVue :home="true" class="bg-gray-50" />
+    <div class="mx-20 my-8 px-3 lg:px-8">
+      <!-- Topic -->
+      <div class="text-4xl font-bold text-primaryPurple my-4">écouté</div>
+      <!-- Solution Description  -->
+      <div
+        class="text-xl font-light text-gray-600 max-w-xl text-justify tracking-tighter"
+      >
+        Enabling optimal urban location planning through tracking and mitigatio
+        of noise pollution prone locations. Using highly intelligent IoT
+        systemms and cloud platforms.
+      </div>
     </div>
 
-  </div>
- 
     <!--  Journey Flow Cards -->
-    <div class="flex justify-center mx-auto my-10 gap-5">
-    
+    <div class="flex justify-center flex-col lg:flex-row lg:mx-auto my-10 gap-5">
       <!-- Card one -->
       <div
-        class="bg-white flex flex-col w-72 h-80 border-2 border-gray-200 transition ease-in-out duration-150 delay-150 hover:cursor-pointer hover:border-primaryPurple translate-y-0 hover:-translate-y-2 rounded-lg overflow-hidden shadow-lg"
+        class="mx-auto bg-white lg:mx-10  flex flex-col w-72 h-80 border-2 border-gray-200 transition ease-in-out duration-150 delay-150 hover:cursor-pointer hover:border-primaryPurple translate-y-0 hover:-translate-y-2 rounded-lg overflow-hidden shadow-lg"
       >
         <img
           class="w-40 mx-auto px-3 p-2 transition ease-in-out"
@@ -39,15 +37,7 @@
       </div>
       <!-- Card Two -->
       <div
-        class="bg-white flex flex-col
-         border-2 border-gray-200 
-         transition ease-in-out 
-         duration-150 delay-150 
-         
-         hover:border-yellow-300
-          translate-y-0 hover:-translate-y-2
-           w-72 h-80 mx-18
-            hover:cursor-pointer rounded-lg overflow-hidden shadow-lg"
+        class="bg-white mx-auto lg:mx-10  flex flex-col border-2 border-gray-200 transition ease-in-out duration-150 delay-150 hover:border-yellow-300 translate-y-0 hover:-translate-y-2 w-72 h-80 mx-18 hover:cursor-pointer rounded-lg overflow-hidden shadow-lg"
       >
         <svg
           width="64"
@@ -79,14 +69,7 @@
       </div>
       <!-- Card Three -->
       <div
-        class="flex flex-col bg-white
-         w-72 h-80 border-2 
-         border-gray-200 transition 
-         ease-in-out duration-150 delay-150 
-         hover:cursor-pointer 
-         hover:border-teal-300
-         bg-primaryGreen 
-          translate-y-0 hover:-translate-y-2 rounded-lg overflow-hidden shadow-lg"
+        class="mx-auto lg:mx-10 flex flex-col bg-white w-72 h-80 border-2 border-gray-200 transition ease-in-out duration-150 delay-150 hover:cursor-pointer hover:border-teal-300 bg-primaryGreen translate-y-0 hover:-translate-y-2 rounded-lg overflow-hidden shadow-lg"
       >
         <svg
           width="141"
@@ -113,8 +96,7 @@
             />
             <path
               id="top"
-              class="transition duration-150 
-              delay-300 animate-bounce "
+              class="transition duration-150 delay-300 animate-bounce"
               d="M125.272 5H85.523C85.472 4 83.948 1 82.083 1H62.134C60.269 1 58.745 4 58.694 5H18.945C16.424 5 14.562 6.639 14.562 9.16V10.435C14.562 12.956 16.424 16 18.945 16H125.272C127.793 16 129.562 12.956 129.562 10.435V9.16C129.562 6.639 127.793 5 125.272 5V5Z"
               stroke="#0BCEB2"
               stroke-miterlimit="10"
@@ -219,8 +201,8 @@
             Analytics & Reports
           </div>
           <p class="text-primaryDark font-light text-base pb-4">
-            Providing a simple of the data collected and
-            whether the deployed locations are predominantly noise prone or not.
+            Providing a simple of the data collected and whether the deployed
+            locations are predominantly noise prone or not.
           </p>
         </div>
       </div>
@@ -241,9 +223,9 @@ export default {
 };
 </script>
 
-<style> 
+<style>
 .home {
   background: bottom/auto url("../assets/bg.svg") no-repeat;
-  height:100vh !important;
+  height: 100vh !important;
 }
-</style> 
+</style>
