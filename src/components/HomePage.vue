@@ -225,7 +225,7 @@ export default {
 
 <style>
 .home {
-  background: bottom/auto url("../assets/bg.svg") no-repeat;
+  background: bottom/auto url("../assets/bg.svg") no-repeat !important;
   height: 100vh !important;
 }
 </style>

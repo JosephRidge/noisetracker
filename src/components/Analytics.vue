@@ -1,5 +1,5 @@
 <template>
-  <div class="home bg-gray-50 h-screen">
+  <div class="analytics bg-gray-50 h-screen">
     <TopNavigationVue :stats="true" class="bg-white" />
     <div
       class=" grid grid-rows-2 
@@ -139,7 +139,7 @@ export default {
   background: gray !important;
 }
 
-.home {
+.analytics {
   background: right bottom/auto url("../assets/analyticsbg.svg") no-repeat;
   height: 100vh !important;
 }
