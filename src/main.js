@@ -3,9 +3,10 @@ import {createRouter, createWebHistory} from 'vue-router'
 import './style/index.css'
 import Home from './components/HomePage.vue'
 import Map from './components/Maps.vue'
+import Analytics from './components/Analytics.vue' 
 
-import App from './App.vue'
-
+import App from './App.vue' 
+import HighchartsVue from 'highcharts-vue'
 const routes = [
     {
       path:'/',
@@ -13,9 +14,14 @@ const routes = [
       component:Home, 
     },
     {
-      path:'/tracking',
+      path:'/locations',
       name:'Tracking',
       component:Map, 
+    },
+    {
+      path:'/stats',
+      name:'Analytics',
+      component:Analytics, 
     },
   ]
 // create the router instance 
@@ -24,4 +30,7 @@ const router = createRouter({
     routes,
   })
  
-createApp(App).use(router).mount('#app')
+createApp(App)
+.use(HighchartsVue)
+.use(router)
+.mount('#app')

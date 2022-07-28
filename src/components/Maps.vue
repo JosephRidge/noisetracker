@@ -1,8 +1,9 @@
 <template>
+    <TopNavigationVue :maps="true" class="drop-shadow-lg"/>
   <div class=" font-Lexend">
     <l-map
       style="height: 100vh; width: 100vw"
-      class="relative overflow-x-hidden"
+      class="map relative overflow-x-hidden"
       :zoom="zoom"
       centerboundsOfKenya
       :minZoom="6.5"
@@ -27,12 +28,12 @@
         :fillOpacity="0.5"
         fillColor="#FF9F1C"
       ></l-polygon> -->
-
     </l-map>
   </div>
 </template>
 
 <script>
+import TopNavigationVue from "./TopNavigation.vue";
 import "leaflet/dist/leaflet.css";
  import {
   LMap,
@@ -55,6 +56,7 @@ export default {
     LPopup,
     LPolygon,
     LIcon, 
+    TopNavigationVue
   },
   data() {
     return {
@@ -118,5 +120,8 @@ export default {
   padding: 10px !important;
   margin: 10px !important;
   margin-right: 20px !important;
+}
+#map{
+  background-color: yellow;
 }
 </style>

@@ -10,12 +10,13 @@
   },
   "dependencies": {
     "@vue-leaflet/vue-leaflet": "^0.6.1",
+    "highcharts-vue": "^1.4.0",
     "leaflet": "1.7.1",
     "leaflet.markercluster": "^1.5.3",
     "patch-package": "6.4.7",
     "pinia": "^2.0.14",
-    "vue-router": "^4.1.2",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.0",
