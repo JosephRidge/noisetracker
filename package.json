@@ -13,6 +13,7 @@
     "highcharts-vue": "^1.4.0",
     "leaflet": "1.7.1",
     "leaflet.markercluster": "^1.5.3",
+    "mqtt": "^4.3.7",
     "patch-package": "6.4.7",
     "pinia": "^2.0.14",
     "vue": "^3.2.37",
