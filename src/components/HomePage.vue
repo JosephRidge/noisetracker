@@ -22,7 +22,7 @@
       >
         <img
           class="w-40 mx-auto px-3 p-2 transition ease-in-out"
-          src="src/assets/finger-print-lock-success.gif"
+          src="../assets/finger-print-lock-success.gif"
           alt="Sunset in the mountains"
         />
         <div class="px-6 py-2">
