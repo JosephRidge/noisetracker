@@ -52,9 +52,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig); 
+const app = initializeApp(firebaseConfig); 
 
 createApp(App)
+.use(app)
 .use(HighchartsVue)
 .use(router)
 .mount('#app')

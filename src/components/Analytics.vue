@@ -2,23 +2,17 @@
   <div class="analytics bg-gray-50 h-screen">
     <TopNavigationVue :stats="true" class="bg-white" />
     <div
-      class=" grid grid-rows-2 
-      lg:flex mx-10 lg:place-items-center lg:py-10 h-full lg:h-3/4"
+      class="grid grid-rows-2 lg:flex mx-10 lg:place-items-center lg:py-10 h-full lg:h-3/4"
     >
       <!-- Device Card showing details  -->
       <div
-        class="bg-white mx-auto py-3 px-1
-         lg:first-letter:file:my-auto lg:mx-10  
-         lg:flex lg:flex-col border-2 hover:border-lightPurple
-           drop-shadow hover:drop-shadow-xl  w-auto my-auto lg:w-80 
-           h-auto lg:h-80 mx-18 hover:cursor-pointer 
-           rounded-lg overflow-hidden shadow-lg"
+        class="bg-white mx-auto py-3 px-1 lg:first-letter:file:my-auto lg:mx-10 lg:flex lg:flex-col border-2 hover:border-lightPurple drop-shadow hover:drop-shadow-xl w-auto my-auto lg:w-80 h-auto lg:h-80 mx-18 hover:cursor-pointer rounded-lg overflow-hidden shadow-lg"
       >
         <svg
           width="75"
           height="86"
           viewBox="0 0 75 86"
-          class="mx-5 my-auto "
+          class="mx-5 my-auto"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -59,22 +53,30 @@
           </g>
         </svg>
 
-        <div class="px-6 py-2 ">
+        <div class="px-6 py-2">
           <div class="font-normal text-lg text-primaryDark mb-2 my-2">
-            <span class="font-bold text-xl text-primaryDark my-2"> {{data.deviceID}}</span>
+            <span class="font-bold text-xl text-primaryDark my-2">
+              {{ data.deviceID }}</span
+            >
           </div>
           <div class="font-light text-lg text-primaryDark mb-2">
-            Location : 
-            <span class="font-light text-primaryPurple mx-2"> {{data.deviceLoc}}</span>
+            Location :
+            <span class="font-light text-primaryPurple mx-2">
+              {{ data.deviceLoc }}</span
+            >
           </div>
           <div class="font-light text-lg text-primaryDark mb-2">
             Noise Levels :
-            <span class="font-light text-primaryPurple mx-2">{{data.currentDeviceNoiseLvl/10}} dB</span>
+            <span class="font-light text-primaryPurple mx-2"
+              >{{ data.currentDeviceNoiseLvl }} dB</span
+            >
           </div>
-           <div class="font-light text-lg text-primaryDark mb-2">
+          <div class="font-light text-lg text-primaryDark mb-2">
             State :
-            <span class="font-bold text-white mx-2
-            py-1 px-3 uppercase bg-primaryPurple rounded-full text-xs ">{{data.currentState}} </span>
+            <span
+              class="font-bold text-white mx-2 py-1 px-3 uppercase bg-primaryPurple rounded-full text-xs"
+              >{{ data.currentState }}
+            </span>
           </div>
         </div>
       </div>
@@ -82,12 +84,14 @@
         :options="chartOptions"
         class="my-2 w-full lg:w-4/6 h-full transition ease-in-out duration-150 rounded-md border-2 hover:border-primaryPurple"
       ></highcharts> -->
-        <GraphsVue :data="data" class=" rounded-xl shadow"/>
+      <GraphsVue :data="data" :payload="payload" class="rounded-xl shadow" />
     </div>
   </div>
 </template>
 
 <script>
+import { getDatabase, ref, push, onValue, remove } from "firebase/database";
+
 import TopNavigationVue from "./TopNavigation.vue";
 import GraphsVue from "./Graphs.vue";
 import { Chart } from "highcharts-vue";
@@ -95,7 +99,7 @@ export default {
   props: ["data"],
   components: {
     TopNavigationVue,
-    GraphsVue, 
+    GraphsVue,
   },
   data() {
     return {
@@ -112,14 +116,16 @@ export default {
           text: "écouté - device Telemetry",
         },
       },
-      data:{
-        deviceID:"Device Bellevue",
-        deviceLoc:"Bellevue, South C",
-        deviceDetail:"écouté device node Telemetry",
-        currentDeviceNoiseLvl:512,
-        currentState:"Safe",
-        deviceData:[1,2,34,5,6,7,89,9,53,43,54,3,34,5]
-      }
+      data: {
+        deviceID: "",
+        deviceLoc: "",
+         currentDeviceNoiseLvl: 0,
+        currentState: "",
+        deviceDetail: "écouté device node Telemetry",
+       
+        deviceData: [],
+      },
+      payload: {},
     };
   },
 
@@ -127,9 +133,45 @@ export default {
     setData() {
       this.chartOptions.title = "Are you ready ! ";
     },
+    getDataFromFRDB() {
+      const db = getDatabase();
+      let paload = {};
+      let AllData = [];
+      const dtaRef = ref(db, "devices/node_strathmore");
+      onValue(dtaRef, (snapshot) => {
+        const data = snapshot.val();
+
+        let keys = Object.keys(data);
+       
+        let latest = {};
+        let lvlData = []
+        for (let i = 0; i < keys.length; i++) {
+          let k = keys[i];
+          let values = data[k];
+          // console.log(values)
+          AllData.push(values)
+          lvlData.push(values.level) 
+        }
+        console.log(AllData);
+        this.payload = AllData[AllData.length -1];
+        console.log(this.payload)
+        this.data.deviceID = this.payload.id
+        this.data.deviceLoc= this.payload.location
+        this.data.currentDeviceNoiseLvl = this.payload.level
+        if( parseInt(this.payload.level) > 49){
+          this.data.currentState ="Not Safe ! "
+        }
+        else{
+          this.data.currentState ="Safe"
+        } 
+        this.data.deviceData = lvlData
+        console.log(this.data.deviceData)
+      }); 
+  },
   },
   mounted() {
-    this.setData();
+    // this.setData();
+    this.getDataFromFRDB();
   },
 };
 </script>
