@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vue-leaflet/vue-leaflet": "^0.6.1",
+    "firebase": "^9.9.1",
     "highcharts-vue": "^1.4.0",
     "leaflet": "1.7.1",
     "leaflet.markercluster": "^1.5.3",
