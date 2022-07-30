@@ -10,7 +10,7 @@
 
 <script> 
 import { Chart } from "highcharts-vue";
-import { getDatabase, ref,  onValue, remove } from "firebase/database";
+import { getDatabase, ref,  onValue } from "firebase/database";
 
 export default {
   props: ["data","payload"],
